@@ -6,11 +6,11 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:32:14 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/12 21:32:14 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 11:22:16 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 int					ft_grab_rsl(int fd, t_cub *cub)
 {
@@ -51,7 +51,7 @@ int					ft_check_rsl_flag(int fd, t_cub *cub)
 int					ft_check_file(int fd, char buff[3], t_cub *cub)
 {
 	char			tmp_c[1];
-    
+
 	if (!read(fd, tmp_c, 1))
 		return (0);
 	while (tmp_c[0] == ' ' || tmp_c[0] == '\n')
@@ -109,7 +109,8 @@ int					ft_start_parsing(int fd, t_cub *cub)
 	i = 8;
 	while (i-- > 0)
 	{
-		if (!ft_check_file(fd, tmp_c, cub) || (ft_grab_flgs_data(fd, tmp_c, cub) == -1))
+		if (!ft_check_file(fd, tmp_c, cub) ||
+		(ft_grab_flgs_data(fd, tmp_c, cub) == -1))
 			return (-1);
 		ft_bzero(tmp_c, 3);
 	}

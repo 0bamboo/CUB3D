@@ -6,33 +6,37 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 17:58:37 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/12 17:58:37 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 11:20:55 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void				ft_set_p_direction(t_cub *cub)
 {
 	if (cub->pos.rdirx < 0)
 	{
 		cub->pos.stepx = -1;
-		cub->pos.siddisx = (cub->pos.posx - cub->pos.mapx) * cub->pos.deltadis_x;
+		cub->pos.siddisx = (cub->pos.posx - cub->pos.mapx)
+		* cub->pos.deltadis_x;
 	}
 	else
 	{
 		cub->pos.stepx = 1;
-		cub->pos.siddisx = (cub->pos.mapx + 1.0 - cub->pos.posx) * cub->pos.deltadis_x;
+		cub->pos.siddisx = (cub->pos.mapx + 1.0 - cub->pos.posx)
+		* cub->pos.deltadis_x;
 	}
 	if (cub->pos.rdiry < 0)
 	{
 		cub->pos.stepy = -1;
-		cub->pos.siddisy = (cub->pos.posy - cub->pos.mapy) * cub->pos.deltadis_y;
+		cub->pos.siddisy = (cub->pos.posy - cub->pos.mapy)
+		* cub->pos.deltadis_y;
 	}
 	else
 	{
 		cub->pos.stepy = 1;
-		cub->pos.siddisy = (cub->pos.mapy + 1.0 - cub->pos.posy) * cub->pos.deltadis_y;
+		cub->pos.siddisy = (cub->pos.mapy + 1.0 - cub->pos.posy)
+		* cub->pos.deltadis_y;
 	}
 }
 

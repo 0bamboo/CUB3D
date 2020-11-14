@@ -6,16 +6,15 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 23:08:54 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/12 23:08:54 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 11:23:03 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "cub3d.h"
-
+#include "../cub3d.h"
 
 void		ft_rotate_to_right(double *oldirx, double *oldplanex, t_cub *cub)
 {
-	if (cub->k_r)
+	if (cub->r_r)
 	{
 		*oldirx = cub->pos.dirx;
 		cub->pos.dirx = cub->pos.dirx * cos(R_S) -
@@ -30,12 +29,12 @@ void		ft_rotate_to_right(double *oldirx, double *oldplanex, t_cub *cub)
 	}
 }
 
-void		ft_rotation_camera(t_cub *cub)
+void		ft_rotation_the_player(t_cub *cub)
 {
 	double		oldirx;
 	double		oldplanex;
 
-	if (cub->k_l)
+	if (cub->r_l)
 	{
 		oldirx = cub->pos.dirx;
 		cub->pos.dirx = cub->pos.dirx * cos(-R_S) -

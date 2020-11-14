@@ -6,7 +6,7 @@
 #    By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/10 13:58:49 by abdait-m          #+#    #+#              #
-#    Updated: 2020/11/13 14:19:30 by abdait-m         ###   ########.fr        #
+#    Updated: 2020/11/14 09:09:07 by abdait-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ FILES = $(wildcard ./SRCs/*.c)
 
 FILES_B = $(wildcard ./CUB3D_bonus/SRCs/*.c)
 
-HEADER = ./SRCs/cub3h.h
+HEADER = cub3d.h
 
 OBJECT = $(FILES:.c=.o)
 

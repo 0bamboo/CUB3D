@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   tools_3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:10:06 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/13 14:33:32 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 11:25:07 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
-size_t	ft_strlen(const char *s)
+size_t			ft_strlen(const char *s)
 {
 	size_t		j;
 
@@ -25,7 +25,7 @@ size_t	ft_strlen(const char *s)
 	return (j);
 }
 
-char	*ft_strchr(const char *s, int c)
+char			*ft_strchr(const char *s, int c)
 {
 	char	*p;
 
@@ -41,7 +41,7 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	*ft_strrchr(const char *s, int c)
+char			*ft_strrchr(const char *s, int c)
 {
 	char	*p;
 	size_t	i;
@@ -63,7 +63,7 @@ char	*ft_strrchr(const char *s, int c)
 	return (0);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int				ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t			i;
 	unsigned char	*p;
@@ -83,7 +83,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char			*ft_strjoin(char *s1, char *s2)
 {
 	int		i;
 	int		j;

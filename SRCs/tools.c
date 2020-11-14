@@ -6,11 +6,11 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 00:03:27 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/13 00:03:27 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 11:37:11 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "cub3d.h"
+#include "../cub3d.h"
 
 int					ft_return_error(int er)
 {
@@ -18,7 +18,8 @@ int					ft_return_error(int er)
 	if (er == -1)
 		ft_putstr_fd(" ---> Error detected in the parsing block ! \n", 1);
 	if (er == -2)
-		ft_putstr_fd(" ---> Supports only the files with the extension '.cub' ! \n", 1);
+		ft_putstr_fd(
+			" ---> Supports only the files with the extension '.cub' ! \n", 1);
 	if (er == -3)
 		ft_putstr_fd(" ---> The structure of the map is not correct ! \n", 1);
 	if (er == -4)
@@ -34,7 +35,7 @@ int					ft_return_error(int er)
 	return (0);
 }
 
-void	ft_swap_dis(int i, int j, t_cub *cub)
+void				ft_swap_dis(int i, int j, t_cub *cub)
 {
 	double	buff;
 
@@ -43,7 +44,7 @@ void	ft_swap_dis(int i, int j, t_cub *cub)
 	cub->sp.sp_dis[j] = buff;
 }
 
-void	ft_swap_ord(int i, int j, t_cub *cub)
+void				ft_swap_ord(int i, int j, t_cub *cub)
 {
 	int		buff;
 
@@ -53,7 +54,7 @@ void	ft_swap_ord(int i, int j, t_cub *cub)
 	ft_swap_dis(i, j, cub);
 }
 
-void	ft_sort_sprite(t_cub *cub)
+void				ft_sort_sprite(t_cub *cub)
 {
 	int		x;
 	int		y;
@@ -70,7 +71,7 @@ void	ft_sort_sprite(t_cub *cub)
 	}
 }
 
-void	ft_manage_order_sp(t_cub *cub)
+void				ft_manage_order_sp(t_cub *cub)
 {
 	int		x;
 
@@ -80,7 +81,8 @@ void	ft_manage_order_sp(t_cub *cub)
 		cub->sp.sp_ord[x] = x;
 		cub->sp.sp_dis[x] = (cub->pos.posx - cub->sp.sp_x[x]) *
 			(cub->pos.posx - cub->sp.sp_x[x]) +
-			(cub->pos.posy - cub->sp.sp_y[x]) * (cub->pos.posy - cub->sp.sp_y[x]);
+			(cub->pos.posy - cub->sp.sp_y[x]) *
+			(cub->pos.posy - cub->sp.sp_y[x]);
 	}
 	ft_sort_sprite(cub);
 }

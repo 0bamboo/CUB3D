@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hundle_parsing.c                                   :+:      :+:    :+:   */
+/*   hundle_parsing_2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:07:31 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/12 21:07:31 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 11:22:49 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 int			ft_check_map_again(t_cub *cub)
 {
@@ -49,7 +49,8 @@ int			ft_check_ln_map(char *ln_map)
 	while (*ln_map)
 	{
 		if (*ln_map != '1' && *ln_map != '0' && *ln_map != ' ' && *ln_map != '2'
-			&& *ln_map != 'W' && *ln_map != 'S' && *ln_map != 'E' && *ln_map != 'N')
+			&& *ln_map != 'W' && *ln_map != 'S' &&
+			*ln_map != 'E' && *ln_map != 'N')
 			return (0);
 		ln_map++;
 	}
@@ -60,8 +61,8 @@ int			ft_check_ln_map(char *ln_map)
 
 int			ft_map_struct(t_cub *cub, char *m_buff)
 {
-	int		nbr;
-	int		i;
+	size_t		nbr;
+	int			i;
 
 	i = 0;
 	nbr = 0;
@@ -78,7 +79,8 @@ int			ft_map_struct(t_cub *cub, char *m_buff)
 	while (cub->map[i])
 	{
 		if (ft_strlen(cub->map[i]) < nbr)
-			cub->map[i] = ft_strjoin(cub->map[i],ft_put_char_1(nbr - ft_strlen(cub->map[i])));
+			cub->map[i] = ft_strjoin(cub->map[i],
+			ft_put_char_1(nbr - ft_strlen(cub->map[i])));
 		i++;
 	}
 	if (ft_correct_map(cub, 1) < 0)

@@ -6,7 +6,7 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/01 15:49:10 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/09 19:36:15 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 11:27:49 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ int			ft_help(char **line, char **s_tab, int byt)
 
 int			get_next_line(int fd, char **line)
 {
-	static char		*s_tab;
-	char			*buff;
-	int				byt;
-	
+	static	char			*s_tab;
+	char					*buff;
+	int						byt;
+
 	if (fd < 0 || BUFFER_SIZE <= 0 ||
 			!line || !(buff = (char *)malloc(BUFFER_SIZE + 1)))
 		return (ft_help(line, &s_tab, -1));

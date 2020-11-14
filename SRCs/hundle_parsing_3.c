@@ -6,12 +6,11 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:56:40 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/12 21:56:40 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 12:39:52 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
-
+#include "../cub3d.h"
 
 char				*ft_put_char_1(int nbr)
 {
@@ -69,28 +68,38 @@ int					ft_grab_colors_val(int fd, t_cub *cub)
 	return (nbr);
 }
 
+static	int			ft_ceil_rgb(int fd, t_cub *cub)
+{
+	if ((cub->prs.ceil_r = ft_grab_colors_val(fd, cub)) == -1
+	|| cub->tmp_c != ',')
+		return (-1);
+	if ((cub->prs.ceil_g = ft_grab_colors_val(fd, cub)) == -1
+	|| cub->tmp_c != ',')
+		return (-1);
+	if ((cub->prs.ceil_b = ft_grab_colors_val(fd, cub)) == -1
+	|| cub->tmp_c != '\n')
+		return (-1);
+	return (0);
+}
+
 int					ft_grab_colors(int fd, char buff[3], t_cub *cub)
 {
 	if (buff[0] == 'F')
 	{
-		if ((cub->prs.flr_r = ft_grab_colors_val(fd, cub)) == -1 || cub->tmp_c != ',')
+		if ((cub->prs.flr_r = ft_grab_colors_val(fd, cub)) == -1
+		|| cub->tmp_c != ',')
 			return (-1);
-		if ((cub->prs.flr_g = ft_grab_colors_val(fd, cub)) == -1 || cub->tmp_c != ',')
+		if ((cub->prs.flr_g = ft_grab_colors_val(fd, cub)) == -1
+		|| cub->tmp_c != ',')
 			return (-1);
-		if ((cub->prs.flr_b = ft_grab_colors_val(fd, cub)) == -1 || cub->tmp_c != '\n')
+		if ((cub->prs.flr_b = ft_grab_colors_val(fd, cub)) == -1
+		|| cub->tmp_c != '\n')
 			return (-1);
 		cub->prs.flg_floor++;
 	}
 	else if (buff[0] == 'C')
 	{
-		if ((cub->prs.ceil_r = ft_grab_colors_val(fd, cub)) == -1
-			|| cub->tmp_c != ',')
-			return (-1);
-		if ((cub->prs.ceil_g = ft_grab_colors_val(fd, cub)) == -1
-			|| cub->tmp_c != ',')
-			return (-1);
-		if ((cub->prs.ceil_b = ft_grab_colors_val(fd, cub)) == -1
-			|| cub->tmp_c != '\n')
+		if (ft_ceil_rgb(fd, cub) == -1)
 			return (-1);
 		cub->prs.flg_ceil++;
 	}

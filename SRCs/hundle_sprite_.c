@@ -6,17 +6,16 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 23:29:02 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/12 23:29:02 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 11:20:11 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "cub3d.h"
+#include "../cub3d.h"
 
 void	ft_start_drawing_sp(t_cub *cub, double transfy)
 {
 	int		y;
 	int		x;
-	int		d;
 	int		color;
 
 	x = cub->pos.drstartx - 1;
@@ -30,10 +29,11 @@ void	ft_start_drawing_sp(t_cub *cub, double transfy)
 		{
 			while (++y < cub->pos.drendy)
 			{
-				d = y * 2 - cub->sh + cub->sp.sp_h;
-				cub->tx.txy = ft_return_biggest_nbr((((d * cub->tx.txh) /
+				cub->d = y * 2 - cub->sh + cub->sp.sp_h;
+				cub->tx.txy = ft_return_biggest_nbr((((cub->d * cub->tx.txh) /
 					cub->sp.sp_h) / 2), 0);
-				color = cub->tx.sp_data[cub->tx.txw * cub->tx.txy + cub->tx.txx];
+				color = cub->tx.sp_data[cub->tx.txw *
+				cub->tx.txy + cub->tx.txx];
 				if (color != 9961608)
 					cub->data[x + cub->sw * y] = color;
 			}
@@ -77,9 +77,10 @@ void	ft_put_sprite(t_cub *cub)
 			cub->pos.posx;
 		cub->sp.spy = 0.4 + cub->sp.sp_y[cub->sp.sp_ord[x]] -
 			cub->pos.posy;
-		invrs = 1.0 / (cub->pos.planex * cub->pos.rdiry - cub->pos.rdirx * cub->pos.planey);
-		transfx = invrs * (cub->pos.rdiry * cub->sp.spx -
-			cub->pos.rdirx * cub->sp.spy);
+		invrs = 1.0 / (cub->pos.planex *
+		cub->pos.diry - cub->pos.dirx * cub->pos.planey);
+		transfx = invrs * (cub->pos.diry * cub->sp.spx -
+			cub->pos.dirx * cub->sp.spy);
 		transfy = invrs * (-cub->pos.planey * cub->sp.spx +
 			cub->pos.planex * cub->sp.spy);
 		cub->sp.spsx = (int)((cub->sw / 2) *

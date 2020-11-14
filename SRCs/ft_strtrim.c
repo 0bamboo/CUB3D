@@ -6,11 +6,11 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:15:12 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/13 14:25:57 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 09:01:44 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 static int		ft_firstchar(char const *str, char const *set)
 {

@@ -6,11 +6,11 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 19:12:21 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/12 19:12:21 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 10:17:29 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "cub3d.h"
+#include "../cub3d.h"
 
 void				ft_game_over(t_cub *cub)
 {
@@ -85,5 +85,6 @@ void				ft_move_the_player(t_cub *cub)
 
 int					ft_click_exit(void *cub)
 {
+	(void)cub;
 	exit(0);
 }

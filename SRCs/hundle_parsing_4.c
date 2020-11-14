@@ -6,11 +6,11 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 22:09:48 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/12 22:09:48 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 11:38:09 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 static int					ft_grab_map_h(char **map)
 {
@@ -41,7 +41,7 @@ static double				ft_adjust_player_pos(t_cub *cub, double add)
 	return (add);
 }
 
-int					ft_check_map_data(char c, int p, t_cub *cub)
+int							ft_check_map_data(char c, int p, t_cub *cub)
 {
 	double			add;
 
@@ -70,7 +70,7 @@ int					ft_check_map_data(char c, int p, t_cub *cub)
 	return (1);
 }
 
-int					ft_correct_map(t_cub *cub, int p)
+int							ft_correct_map(t_cub *cub, int p)
 {
 	cub->map_w = ft_grab_map_w(cub->map);
 	cub->map_h = ft_grab_map_h(cub->map);

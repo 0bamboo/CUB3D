@@ -6,11 +6,11 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 18:30:20 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/12 18:30:20 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 09:59:40 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void				ft_handle_sides(t_cub *cub, int side)
 {
@@ -58,27 +58,27 @@ void				ft_handle_texs(t_cub *cub)
 {
 	if (cub->pos.check == 0)
 	{
-		cub->tx.txh = cub->tx.rsl_sy;
-		cub->tx.txw = cub->tx.rsl_sx;
-		cub->tx.buff_data = cub->tx.s_data;
+		cub->tx.txh = cub->tx.rsl_wy;
+		cub->tx.txw = cub->tx.rsl_wx;
+		cub->tx.buff_data = cub->tx.w_data;
 	}
 	else if (cub->pos.check == 1)
-	{
-		cub->tx.txh = cub->tx.rsl_ey;
-		cub->tx.txw = cub->tx.rsl_ex;
-		cub->tx.buff_data = cub->tx.e_data;
-	}
-	else if (cub->pos.check == 2)
 	{
 		cub->tx.txh = cub->tx.rsl_ny;
 		cub->tx.txw = cub->tx.rsl_nx;
 		cub->tx.buff_data = cub->tx.n_data;
 	}
+	else if (cub->pos.check == 2)
+	{
+		cub->tx.txh = cub->tx.rsl_ey;
+		cub->tx.txw = cub->tx.rsl_ex;
+		cub->tx.buff_data = cub->tx.e_data;
+	}
 	else if (cub->pos.check == 3)
 	{
-		cub->tx.txh = cub->tx.rsl_wy;
-		cub->tx.txw = cub->tx.rsl_wx;
-		cub->tx.buff_data = cub->tx.w_data;
+		cub->tx.txh = cub->tx.rsl_sy;
+		cub->tx.txw = cub->tx.rsl_sx;
+		cub->tx.buff_data = cub->tx.s_data;
 	}
 }
 

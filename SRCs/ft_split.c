@@ -6,11 +6,11 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 15:40:07 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/13 14:21:15 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 09:01:33 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 static int			ft_count_words(char const *s, char c)
 {

@@ -6,12 +6,11 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 20:37:38 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/12 20:37:38 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 11:26:56 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
-
+#include "../cub3d.h"
 
 static void					ft_init_west_vect(char c, t_cub *cub)
 {
@@ -52,7 +51,7 @@ void						ft_init_vectors(char c, t_cub *cub)
 
 void						ft_init_vars(t_cub *cub)
 {
-	cub->sp.nbr_sp= 0;
+	cub->sp.nbr_sp = 0;
 	cub->sh = 0;
 	cub->sw = 0;
 	cub->sv.save = 0;
@@ -77,6 +76,22 @@ void						ft_init_vars(t_cub *cub)
 void						ft_init_bmp(t_cub *cub)
 {
 	cub->sv.bmp = NULL;
-    cub->sv.size = 0;
+	cub->sv.size = 0;
 	cub->sv.indx = 0;
+}
+
+void						ft_bzero(void *s, size_t n)
+{
+	char	*str;
+	size_t	l;
+
+	l = 0;
+	str = (char *)s;
+	if (n == 0)
+		return ;
+	while (l < n)
+	{
+		str[l] = 0;
+		l++;
+	}
 }

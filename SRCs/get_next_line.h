@@ -6,7 +6,7 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/01 15:41:37 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/09 19:36:22 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/14 11:28:03 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # endif
 
 # include <stdlib.h>
-# include  <stdio.h>
+# include <stdio.h>
 # include <unistd.h>
 
 int			get_next_line(int fd, char **line);

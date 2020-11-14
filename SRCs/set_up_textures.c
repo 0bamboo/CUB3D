@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_up_txures.c                                  :+:      :+:    :+:   */
+/*   set_up_textures.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 22:28:59 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/12 22:28:59 by abdait-m         ###   ########.fr       */
+/*   Created: 2020/11/14 10:48:50 by abdait-m          #+#    #+#             */
+/*   Updated: 2020/11/14 10:49:04 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
-
+#include "../cub3d.h"
 
 int					ft_north_tex(t_cub *cub)
 {
@@ -77,8 +76,8 @@ int					ft_sprite_tex(t_cub *cub)
 	if (!(cub->tx.tex_sp = mlx_xpm_file_to_image(cub->mlx_ptr,
 		tx, &cub->tx.rsl_spx, &cub->tx.rsl_spy)))
 		return (-1);
-	cub->tx.sp_data = (int *)mlx_get_data_addr(cub->tx.tex_sp,
-	&cub->tx.ppsp, &cub->tx.slsp, &cub->tx.esp);
-    free(tx);
+	cub->tx.sp_data = (int *)mlx_get_data_addr(
+		cub->tx.tex_sp, &cub->tx.ppsp, &cub->tx.slsp, &cub->tx.esp);
+	free(tx);
 	return (0);
 }
