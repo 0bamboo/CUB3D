@@ -6,7 +6,7 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 23:29:02 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/16 10:59:37 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/16 11:34:55 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,23 @@ void	ft_start_drawing_sp(t_cub *cub, double transfy)
 	int		x;
 	int		color;
 
-	x = cub->pos.drstartx - 1;
-	while (++x < cub->pos.drendx)
+	x = cub->pos.drstartx;
+	while (x++ < cub->pos.drendx - 1)
 	{
-		cub->tx.txx = (int)(2 * (x - (-cub->sp.sp_w / 2 +
-			cub->sp.spsx)) * cub->tx.rsl_spx / cub->sp.sp_w) / 2;
+		cub->tx.txx = (int)(256 * (x - (-cub->sp.sp_w / 2 +
+			cub->sp.spsx)) * cub->tx.rsl_spx / cub->sp.sp_w) / 256;
 		y = cub->pos.drstarty - 1;
 		if (transfy > 0 && x > 0 && x < cub->sw &&
 			transfy < cub->sp.z_buff[x])
 		{
-			while (++y < cub->pos.drendy)
+			while (y++ < cub->pos.drendy - 1)
 			{
 				cub->d = y * 256 - cub->sh * 128 + cub->sp.sp_h * 128;
 				cub->tx.txy = ((cub->d * cub->tx.rsl_spy) /
 					cub->sp.sp_h) / 256;
 				color = cub->tx.sp_data[cub->tx.rsl_spx *
 				cub->tx.txy + cub->tx.txx];
-				if (color != 9961608 && color != 1026294)
+				if (color != 9961608)
 					cub->data[x + cub->sw * y] = color;
 			}
 		}

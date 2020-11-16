@@ -6,7 +6,7 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 18:30:20 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/14 09:59:40 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/16 11:05:10 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void				ft_start_drawing(int b_dr, int end_dr, int x, t_cub *cub)
 		cub->data[x + cub->sw * y] =
 		cub->tx.buff_data[cub->tx.txw * cub->tx.txy + cub->tx.txx];
 	}
-	while (++y < cub->sh)
-		cub->data[x + cub->sw * y] = (cub->prs.flr_r << 16)
+	while (y < cub->sh)
+		cub->data[x + cub->sw * y++] = (cub->prs.flr_r << 16)
 		+ (cub->prs.flr_b << 8) + cub->prs.flr_b;
 }
