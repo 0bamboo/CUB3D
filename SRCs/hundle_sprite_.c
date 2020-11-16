@@ -6,7 +6,7 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 23:29:02 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/16 11:34:55 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/16 14:22:59 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_start_drawing_sp(t_cub *cub, double transfy)
 					cub->sp.sp_h) / 256;
 				color = cub->tx.sp_data[cub->tx.rsl_spx *
 				cub->tx.txy + cub->tx.txx];
-				if (color != 9961608)
+				if (color != 9961608 && color != 0)
 					cub->data[x + cub->sw * y] = color;
 			}
 		}
