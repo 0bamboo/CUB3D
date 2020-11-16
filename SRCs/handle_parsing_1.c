@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hundle_parsing_1.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:32:14 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/14 11:22:16 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/16 18:39:06 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int					ft_grab_rsl(int fd, t_cub *cub)
 			return (-1);
 	if ((tmp_c[0] < '0' && tmp_c[0] > '9'))
 		return (-1);
-	while (tmp_c[0] >= '0' && tmp_c[0] <= '9')
+	while (tmp_c[0] >= '0' && tmp_c[0] <= '9' && nbr < 2880)
 	{
 		nbr *= 10;
 		nbr += tmp_c[0] - '0';
