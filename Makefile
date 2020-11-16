@@ -6,7 +6,7 @@
 #    By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/10 13:58:49 by abdait-m          #+#    #+#              #
-#    Updated: 2020/11/14 09:09:07 by abdait-m         ###   ########.fr        #
+#    Updated: 2020/11/16 10:33:51 by abdait-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,13 +36,7 @@ $(NAME): $(OBJECT) $(HEADER)
 	@gcc  $(FLAGS) $(MAIN) $(LIB) -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 	@echo "\n\033[36m***** YOU MAY START YOUR GAME NOW ***** \033[0m\n"
 	
-# bonus:
-
-# $(NAME): $(OBJECT_B) $(HEADER)
-# 	@mv *.o ./CUB3D_bonus/SRCs
-# 	@ar -rcs $(LIB) $(OBJECT_B)
-# 	@gcc  $(FLAGS) $(MAIN) $(LIB) -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-# 	@echo "\n\033[36m***** YOU MAY START YOUR GAME NOW ***** \033[0m\n"
+bonus: all
 
 %.o:%.c $(HEADER)
 	@gcc -c $< $(FLAGS)

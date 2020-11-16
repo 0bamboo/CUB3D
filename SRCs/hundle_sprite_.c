@@ -6,7 +6,7 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 23:29:02 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/14 11:20:11 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/16 10:59:37 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ void	ft_start_drawing_sp(t_cub *cub, double transfy)
 	while (++x < cub->pos.drendx)
 	{
 		cub->tx.txx = (int)(2 * (x - (-cub->sp.sp_w / 2 +
-			cub->sp.spsx)) * cub->tx.txw / cub->sp.sp_w) / 2;
+			cub->sp.spsx)) * cub->tx.rsl_spx / cub->sp.sp_w) / 2;
 		y = cub->pos.drstarty - 1;
 		if (transfy > 0 && x > 0 && x < cub->sw &&
 			transfy < cub->sp.z_buff[x])
 		{
 			while (++y < cub->pos.drendy)
 			{
-				cub->d = y * 2 - cub->sh + cub->sp.sp_h;
-				cub->tx.txy = ft_return_biggest_nbr((((cub->d * cub->tx.txh) /
-					cub->sp.sp_h) / 2), 0);
-				color = cub->tx.sp_data[cub->tx.txw *
+				cub->d = y * 256 - cub->sh * 128 + cub->sp.sp_h * 128;
+				cub->tx.txy = ((cub->d * cub->tx.rsl_spy) /
+					cub->sp.sp_h) / 256;
+				color = cub->tx.sp_data[cub->tx.rsl_spx *
 				cub->tx.txy + cub->tx.txx];
-				if (color != 9961608)
+				if (color != 9961608 && color != 1026294)
 					cub->data[x + cub->sw * y] = color;
 			}
 		}
@@ -69,8 +69,6 @@ void	ft_put_sprite(t_cub *cub)
 
 	x = -1;
 	ft_manage_order_sp(cub);
-	cub->tx.txh = cub->tx.rsl_spy;
-	cub->tx.txw = cub->tx.rsl_spx;
 	while (++x < cub->sp.nbr_sp)
 	{
 		cub->sp.spx = 0.4 + cub->sp.sp_x[cub->sp.sp_ord[x]] -

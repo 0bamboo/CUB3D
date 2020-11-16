@@ -6,7 +6,7 @@
 /*   By: abdait-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 19:12:21 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/14 10:17:29 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/16 10:50:00 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void				ft_game_over(t_cub *cub)
 		free(cub->mlx_ptr);
 	}
 	free(cub->map);
+	free(cub->prs.p_sp);
 	free(cub->prs.p_e);
 	free(cub->prs.p_s);
 	free(cub->prs.p_w);
