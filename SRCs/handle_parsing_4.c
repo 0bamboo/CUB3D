@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hundle_parsing_4.c                                 :+:      :+:    :+:   */
+/*   handle_parsing_4.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 22:09:48 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/16 17:55:05 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/21 11:17:48 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int							ft_check_map_data(char c, int p, t_cub *cub)
 
 int							ft_correct_map(t_cub *cub, int p)
 {
+	cub->sp.z_buff = NULL;
 	cub->map_w = ft_grab_map_w(cub->map);
 	cub->map_h = ft_grab_map_h(cub->map);
 	cub->x = -1;
@@ -84,6 +85,7 @@ int							ft_correct_map(t_cub *cub, int p)
 				return (-1);
 		}
 	}
+	cub->sp.z_buff = (double *)malloc(cub->sw * sizeof(double));
 	if (p != 2)
 		return (-1);
 	return (0);

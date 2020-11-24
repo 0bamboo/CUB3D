@@ -6,7 +6,7 @@
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 16:34:56 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/16 17:55:30 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/21 11:13:38 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@
 # define R_R 124
 # define R_L 123
 # define ESC 53
-# define M_S 0.09
+# define M_S 0.07
 # define R_S 0.04
+# define MAX_S 2560
 
 typedef	struct				s_sv
 {
@@ -141,17 +142,17 @@ typedef	struct				s_pos
 
 typedef	struct				s_sprite
 {
-	double					z_buff[2560];
-	double					sp_x[100];
-	double					sp_y[100];
+	double					*z_buff;
+	double					sp_x[MAX_S];
+	double					sp_y[MAX_S];
 	int						nbr_sp;
-	double					sp_dis[2560];
+	double					sp_dis[MAX_S];
 	int						sp_h;
 	int						sp_w;
 	double					spx;
 	double					spy;
 	int						spsx;
-	int						sp_ord[100];
+	int						sp_ord[MAX_S];
 }							t_sp;
 
 typedef	struct				s_cub
@@ -172,8 +173,8 @@ typedef	struct				s_cub
 	int						s_line;
 	int						endian;
 	int						*sc;
-	int						sh;
-	int						sw;
+	long long				sh;
+	long long				sw;
 	int						map_w;
 	int						map_h;
 	char					**map;
@@ -227,7 +228,7 @@ int							ft_correct_map(t_cub *cub, int p);
 int							ft_look_4_spaces(t_cub *cub, int x, int y);
 int							ft_grab_colors_val(int fd, t_cub *cub);
 int							ft_grab_colors(int fd, char buff[3], t_cub *cub);
-int							ft_grab_rsl(int fd, t_cub *cub);
+long long					ft_grab_rsl(int fd, t_cub *cub);
 int							ft_check_rsl_flag(int fd, t_cub *cub);
 int							ft_check_file(int fd, char buff[3], t_cub *cub);
 int							ft_grab_flgs_data(int fd,

@@ -6,7 +6,7 @@
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 19:12:21 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/16 17:55:15 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/21 10:44:46 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void				ft_game_over(t_cub *cub)
 		mlx_destroy_window(cub->mlx_ptr, cub->win_ptr);
 		free(cub->mlx_ptr);
 	}
+	free(cub->sp.z_buff);
 	free(cub->map);
 	free(cub->prs.p_sp);
 	free(cub->prs.p_e);

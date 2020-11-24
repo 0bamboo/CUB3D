@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hundle_parsing_1.c                                 :+:      :+:    :+:   */
+/*   handle_parsing_1.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:32:14 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/16 18:39:06 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/20 14:57:04 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int					ft_grab_rsl(int fd, t_cub *cub)
+long long			ft_grab_rsl(int fd, t_cub *cub)
 {
 	char			tmp_c[1];
-	int				nbr;
+	long long		nbr;
 
 	nbr = 0;
 	if (!read(fd, tmp_c, 1))
@@ -25,7 +25,7 @@ int					ft_grab_rsl(int fd, t_cub *cub)
 			return (-1);
 	if ((tmp_c[0] < '0' && tmp_c[0] > '9'))
 		return (-1);
-	while (tmp_c[0] >= '0' && tmp_c[0] <= '9' && nbr < 2880)
+	while (tmp_c[0] >= '0' && tmp_c[0] <= '9')
 	{
 		nbr *= 10;
 		nbr += tmp_c[0] - '0';
@@ -122,7 +122,7 @@ int					ft_start_parsing(int fd, t_cub *cub)
 	(cub->sw < 360) ? cub->sw = 360 : 0;
 	(cub->sw > 2560) ? cub->sw = 2560 : 0;
 	(cub->sh < 240) ? cub->sh = 240 : 0;
-	(cub->sh > 1600) ? cub->sh = 1600 : 0;
+	(cub->sh > 1500) ? cub->sh = 1500 : 0;
 	if (ft_start_parsing_the_map(fd, cub) < 0)
 		return (-3);
 	if (cub->map_w < 3 || cub->map_h < 3)

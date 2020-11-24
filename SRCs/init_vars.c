@@ -6,7 +6,7 @@
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 20:37:38 by abdait-m          #+#    #+#             */
-/*   Updated: 2020/11/16 17:55:11 by abdait-m         ###   ########.fr       */
+/*   Updated: 2020/11/21 11:00:32 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void						ft_init_vars(t_cub *cub)
 	cub->k_l = 0;
 	cub->r_l = 0;
 	cub->r_r = 0;
+	cub->sp.z_buff = NULL;
 }
 
 void						ft_init_bmp(t_cub *cub)
